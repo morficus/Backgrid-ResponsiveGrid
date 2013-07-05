@@ -1,3 +1,20 @@
+/* wraps everything together, keeping the pinned columns in place */
+
+.grid-responsive-wrapper {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* enable horizontal scrolling on the non-pinned grid */
+
+.grid-scrollable {
+  overflow: auto;
+  overflow-y: hidden;
+}
+
+/* makes the cloned columns stay to the left */
+
 .grid-pinned {
   position: absolute;
   top: 0;
@@ -7,17 +24,8 @@
   background-color: white;
 }
 
+/* allow the original table the fill up as much space as it needs */
+
 .grid-pinned table {
   width: auto !important;
-}
-
-.grid-scrollable {
-  overflow: auto;
-  overflow-y: hidden;
-}
-
-.grid-responsive-wrapper {
-  position: relative;
-  overflow-x: hidden;
-  overflow-y: auto;
 }
