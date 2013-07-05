@@ -20,6 +20,9 @@
           /** @property {Number} screensize at which 'isPinnable' will flip to true */
           minScreenSize : 797,
 
+          /** @property {Number} number of columns to ping */
+          columnsToPin : 1,
+
           /**
            * Initializer.
            *
@@ -31,6 +34,7 @@
                Backgrid.Grid.prototype.initialize.call(this, options);
 
                this.minScreenSize = options.minScreenSize || this.minScreenSize;
+               this.columnsToPin = options.columnsToPin || this.columnsToPin;
 
                this.body.collection.on('backgrid:refresh', this.pinColumns, this);
 
@@ -66,8 +70,13 @@
                }
 
 
-               //hide all columns, with the exception of those that we want pinned (at the moment, only the first column)
-               $tableCopy.find('th:not(:first-child),td:not(:first-child)').hide();
+               //hide all columns, then unhide those that we want to pin
+               $tableCopy.find('th,td').hide();
+               for( var i = 1; i<= this.columnsToPin; i++)
+               {
+                    $tableCopy.find('th:nth-child(' + i + '),td:nth-child(' + i + ')').show();
+               }
+
 
                //remove all previous instances of pinned columns
                this.$el.parents('.grid-responsive-wrapper').find('.grid-pinned').remove();
