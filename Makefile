@@ -21,6 +21,7 @@ csslint:
 	rm -rf $(TMP_DIR)
 
 dist:
+	rm -rf $(DIST_DIR)
 	mkdir $(TMP_DIR)
 	mkdir $(DIST_DIR)
 	uglifyjs $(SRC_DIR)/$(JS_FILE) --compress --mangle --output $(DIST_DIR)/$(JS_OUTFILE)
