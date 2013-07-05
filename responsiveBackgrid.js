@@ -49,7 +49,7 @@
 
                //clone the entire table - this will later turn into the pinned columns
                var  $originalTable = this.$el,
-                    $tableCopy = $originalTable.parent().clone();
+                    $tableCopy = $originalTable.clone();
 
                //check if the table needs to be made into "small-screen-mode" AND if the grid is already present on the screen, if not then do nothing
                if( !this.isPinnable || !$originalTable.is(':visible'))
