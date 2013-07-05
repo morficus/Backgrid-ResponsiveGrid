@@ -1,7 +1,9 @@
-##Backgrind-ResponsiveGrid## v0.1
+##Backgrind-ResponsiveGrid##
 
 An extension for [Backgrid.js](http://backgridjs.com/) to provide a better small-screen-friendly expereince.
 The extention was inspiered by (Zurb's Responsive Tables)[http://zurb.com/playground/responsive-tables].
+
+current vesion: v0.1
 
 ##Usage##
 Step 1 - add responsiveBackgrid.js to your page
