@@ -1,0 +1,137 @@
+(function ($, _, Backbone, Backgrid)
+{
+
+     /**
+      * ResponsiveGrid is an enhancment to the base Backgrind.Grid class which improives its usability on small-screens
+      * such as phones or portrait-mode tablets.
+      *
+      * @class Backgrid.Extension.ResponsiveGrid
+      * @extends Backgrid.Grid
+      */
+     Backgrid.Extension.ResponsiveGrid = Backgrid.Grid.extend({
+
+
+          /** @property {boolean} is the table in a state that calls for pinned columns? */
+          isPinnable : false,
+
+          /** @property {boolean} are the columns already pinned? */
+          isPinned : false,
+
+          /** @property {Number} screensize at which 'isPinnable' will flip to true */
+          minScreenSize : 797,
+
+          /**
+           * Initializer.
+           *
+           * @param  {Object} options
+           * @param {Number} options.minScreenSize custom screensize at which 'isPinnable' will flip to true
+           */
+          initialize : function( options )
+          {
+               Backgrid.Grid.prototype.initialize.call(this, options);
+
+               this.minScreenSize = options.minScreenSize || this.minScreenSize;
+
+               this.body.collection.on('backgrid:refresh', this.pinColumns, this);
+
+               $(window).on('resize', {'grid' : this}, this.setSwitchable);
+
+               this.setSwitchable();
+          },
+
+          /**
+           * Modifies the table to freeze the first column of the grid.
+           *
+           * @return {boolean} indicating if the column(s) was succefully pinned or not
+           */
+          pinColumns : function( )
+          {
+
+               //clone the entire table - this will later turn into the pinned columns
+               var  $originalTable = this.$el,
+                    $tableCopy = $originalTable.parent().clone();
+
+               //check if the table needs to be made into "small-screen-mode" AND if the grid is already present on the screen, if not then do nothing
+               if( !this.isPinnable || !$originalTable.is(':visible'))
+               {
+                    return false;
+               }
+
+               //only wrap the element if the grid is not already in "small-screen-mode"
+               if( !this.isPinned )
+               {
+                    //wrap the original table with some spcial classes to enable the y-scrolling behaviour
+                    $originalTable.wrap('<div class="grid-responsive-wrapper" />');
+                    $originalTable.wrap('<div class="grid-scrollable" />');
+               }
+
+
+               //hide all columns, with the exception of those that we want pinned (at the moment, only the first column)
+               $tableCopy.find('th:not(:first-child),td:not(:first-child)').hide();
+
+               //remove all previous instances of pinned columns
+               this.$el.parents('.grid-responsive-wrapper').find('.grid-pinned').remove();
+
+               //append the cloned table to the wrapper
+               $('.grid-responsive-wrapper').append($tableCopy);
+
+               //wrap the clone in a div to make it behave as pinned columns
+               $tableCopy.wrap('<div class="grid-pinned" />');
+
+               this.isPinned = true;
+
+               return true;
+
+          },
+
+          /**
+           * Returns the table to its original unpinned state.
+           * It's the oposite of pinColumns.
+           *
+           * @return {boolean} indicates if the column(s) was succefully unpinned or not
+           */
+          unpinColumns : function( )
+          {
+               var $originalTable = this.$el,
+                    $gridWrapper = this.$el.parents('.grid-responsive-wrapper');
+
+               $originalTable.unwrap();
+               $gridWrapper.find('.grid-pinned').remove();
+               $originalTable.unwrap();
+
+               this.isPinned = false;
+
+               return true;
+
+          },
+
+          /**
+           * Based on the screensize, sets the property to indicate if there is a need to pin the column(s) or not
+           *
+           * @param  {Event} event The window resize event (optional)
+           */
+          setSwitchable : function( event )
+          {
+               var grid;
+
+
+               if( _.isUndefined(event))
+               {
+                    grid = this;
+               }else{
+                    grid = event.data.grid;
+               }
+
+
+               if( $(window).width() < grid.minScreenSize )
+               {
+                    grid.isPinnable = true;
+                    grid.pinColumns( );
+               }else{
+                    grid.isPinnable = false;
+                    grid.unpinColumns( );
+               }
+
+          }
+     });
+}(jQuery, _, Backbone, Backgrid));
