@@ -2,7 +2,7 @@
 {
 
   /**
-   * ResponsiveGrid is an enhancment to the base Backgrind.Grid class which improives its usability on small-screens
+   * ResponsiveGrid is an enhancement to the base Backgrid.Grid class which improves its usability on small-screens
    * such as phones or portrait-mode tablets.
    *
    * @class Backgrid.Extension.ResponsiveGrid
@@ -16,7 +16,7 @@
     /** @property {boolean} are the columns already pinned? */
     isPinned : false,
 
-    /** @property {Number} screensize at which 'isPinnable' will flip to true */
+    /** @property {Number} screen size at which 'isPinnable' will flip to true */
     minScreenSize : 797,
 
     /** @property {Number} number of columns to ping */
@@ -26,7 +26,7 @@
      * Initializer.
      *
      * @param  {Object} options
-     * @param {Number} options.minScreenSize custom screensize at which 'isPinnable' will flip to true
+     * @param {Number} options.minScreenSize custom screen size at which 'isPinnable' will flip to true
      */
     initialize : function( options )
     {
@@ -36,6 +36,7 @@
       this.columnsToPin = options.columnsToPin || this.columnsToPin;
 
       this.body.collection.on('backgrid:refresh', this.pinColumns, this);
+      this.header.collection.on('backgrid:sort', this.pinColumns, this);
 
       $(window).on('resize', {'grid' : this}, this.setSwitchable);
 
@@ -45,13 +46,13 @@
     /**
      * Modifies the table to freeze the first column of the grid.
      *
-     * @return {boolean} indicating if the column(s) was succefully pinned or not
+     * @return {boolean} indicating if the column(s) was successfully pinned or not
      */
     pinColumns : function( )
     {
-      //clone the entire table - this will later turn into the pinned columns
+      //deep-lone the entire table - this will later turn into the pinned columns
       var  $originalTable = this.$el,
-      $tableCopy = $originalTable.clone();
+      $tableCopy = $originalTable.clone(true);
 
       //check if the table needs to be made into "small-screen-mode" AND if the grid is already present on the screen, if not then do nothing
       if( !this.isPinnable || !$originalTable.is(':visible'))
@@ -62,7 +63,7 @@
       //only wrap the element if the grid is not already in "small-screen-mode"
       if( !this.isPinned )
       {
-        //wrap the original table with some spcial classes to enable the y-scrolling behaviour
+        //wrap the original table with some special classes to enable the y-scrolling behavior
         $originalTable.wrap('<div class="grid-responsive-wrapper" />');
         $originalTable.wrap('<div class="grid-scrollable" />');
       }
@@ -93,9 +94,9 @@
 
     /**
      * Returns the table to its original unpinned state.
-     * It's the oposite of pinColumns.
+     * It's the opposite of pinColumns.
      *
-     * @return {boolean} indicates if the column(s) was succefully unpinned or not
+     * @return {boolean} indicates if the column(s) was successfully unpinned or not
      */
     unpinColumns : function( )
     {
@@ -112,7 +113,7 @@
     },
 
     /**
-     * Based on the screensize, sets the property to indicate if there is a need to pin the column(s) or not
+     * Based on the screen size, sets the property to indicate if there is a need to pin the column(s) or not
      *
      * @param  {Event} event The window resize event (optional)
      */
