@@ -34,7 +34,7 @@ Use these CSS classes to customize the appearance of the pinned columns:
   - ```.grid-responsive-wrapper```: wraps both of the above-mentioned classes. It's basically what keeps the pinned columns in their place
 
 ##Limitations  
-Pinned columns can not be edited in-line
+Pinned columns can not be edited in-line  
 ~~Clicking on the header of a pinned column does not trigger a sort~~
 
 
