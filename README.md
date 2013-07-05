@@ -1,8 +1,9 @@
-##Backgrind-ResponsiveGrid##
+##Backgrid-ResponsiveGrid##
 
 current vesion: v0.1
 
 An extension for [Backgrid.js](http://backgridjs.com/) to provide a better small-screen-friendly expereince.
+
 The extention was inspiered by [Zurb's Responsive Tables](http://zurb.com/playground/responsive-tables).
 
 
@@ -22,5 +23,4 @@ var myFlexGrid = new Backgrid.Extension.ResponsiveGrid({
 ```
 
 ##License##
-Copyright (c) 2013 Maurice Williams
-Licensed under [MIT License](http://opensource.org/licenses/MIT)
+Copyright (c) 2013 Maurice WilliamsLicensed under [MIT License](http://opensource.org/licenses/MIT)
