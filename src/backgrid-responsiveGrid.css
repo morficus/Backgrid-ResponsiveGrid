@@ -17,13 +17,11 @@
 {
      overflow: auto;
      overflow-y: hidden;
-     /*height: 100%;*/
 }
 
 .grid-responsive-wrapper
 {
-     /*height: 300px;*/
-     overflow-y: auto;
-     overflow-x: hidden;
      position: relative;
+     overflow-x: hidden;
+     overflow-y: auto;
 }
