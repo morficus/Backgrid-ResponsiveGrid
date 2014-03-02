@@ -68,13 +68,14 @@
         $originalTable.wrap('<div class="grid-scrollable" />');
       }
 
-
-      //hide all columns, then unhide those that we want to pin
-      $tableCopy.find('th,td').hide();
-      for( var i = 1; i<= this.columnsToPin; i++)
-      {
-        $tableCopy.find('th:nth-child(' + i + '),td:nth-child(' + i + ')').show();
-      }
+        //skip the columns that we want to pin, and hide all the others
+        var totalColumns = $tableCopy.find('th').length;
+        //we need to do "+1" because using ":nth-child" starts with a zero-based index
+        for(var i = this.columnsToPin + 1; i <= totalColumns; i++)
+        {
+            //$tableCopy.find('th:nth-child(' + i + '),td:nth-child(' + i + ')').hide();
+            $tableCopy.find('th:nth-child(' + i + '),td:nth-child(' + i + ')').hide();
+        }
 
 
       //remove all previous instances of pinned columns
@@ -132,7 +133,7 @@
       {
         grid.isPinnable = true;
         grid.pinColumns( );
-        }else{
+       }else{
         grid.isPinnable = false;
         grid.unpinColumns( );
       }
