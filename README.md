@@ -1,12 +1,12 @@
 ##Backgrid-ResponsiveGrid
 
-current vesion: v0.1
+current vesion: v0.2
 
 An extension for [Backgrid.js](http://backgridjs.com/) to provide a better small-screen-friendly expereince.  
 The extention was inspiered by [Zurb's Responsive Tables](http://zurb.com/playground/responsive-tables).
 
 
-##Dependencies
+##Additional Dependencies
 None
 
 ##Usage
@@ -29,7 +29,7 @@ The following properties can be passed in as part of the options object when ins
 ##Styling
 Use these CSS classes to customize the appearance of the pinned columns:
   - ```.grid-pinned```: the wrapper around the pinned columns.   
-    **careful** not to change the ```positionn```, ```top``` or ```left``` properties else the pinned columns won't be so pinned anymore
+    **careful** not to change the ```position```, ```top``` or ```left``` properties else the pinned columns won't be so pinned anymore
   - ```.grid-scrollable```: when columns are pinned, the wrapper around the scrollable portion of the table has this wrapper class.
   - ```.grid-responsive-wrapper```: wraps both of the above-mentioned classes. It's basically what keeps the pinned columns in their place
 
