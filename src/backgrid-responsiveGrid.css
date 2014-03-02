@@ -6,6 +6,11 @@
   overflow-y: auto;
 }
 
+/* force cell content to not wrap */
+.grid-responsive-wrapper th,.grid-responsive-wrapper td, .grid-responsive-wrapper th a {
+    white-space: nowrap;
+}
+
 /* enable horizontal scrolling on the non-pinned grid */
 
 .grid-scrollable {
