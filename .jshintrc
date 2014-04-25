@@ -1,0 +1,41 @@
+//Example: https://github.com/jshint/jshint/blob/master/examples/.jshintrc
+// See http://jshint.com/docs/ for more details
+{
+  //enforcers
+  "bitwise" : true,
+  "camelcase" : true,
+  "curly" : true,
+  "eqeqeq" : true,
+  "indent" : 2,
+  "latedef" : true,
+  "newcap" : true,
+  "noarg" : true,
+  "noempty" : true,
+  "quotemark" : "double",
+  "undef" : true,
+  "unused" : true,
+  "strict" : false,
+  "trailing" : true,
+  "maxparams" : 3,
+  "maxdepth" : 3,
+
+  //relaxers
+  "multistr" : true,
+  "shadow" : true,
+  "sub" : true,
+
+  //environmentals
+  "jquery" : true,
+
+  //legacy
+  "onevar" : true,
+
+  //custom globals
+  "predef" : {
+    "Backbone" : true,
+    "_" : true,
+    "define" : true,
+    "require" : true,
+    "exports": true
+  }
+}
