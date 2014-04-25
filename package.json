@@ -1,0 +1,28 @@
+{
+  "name": "Backgrid-ResponsiveGrid",
+  "version": "0.3.0",
+  "description": "<img src=\"//benschwarz.github.io/bower-badges/badge@2x.png\" width=\"130\" height=\"30\">",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/morficus/Backgrid-ResponsiveGrid.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/morficus/Backgrid-ResponsiveGrid/issues"
+  },
+  "homepage": "https://github.com/morficus/Backgrid-ResponsiveGrid",
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-recess": "~0.6.1"
+  }
+}
