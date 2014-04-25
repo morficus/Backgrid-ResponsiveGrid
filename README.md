@@ -1,6 +1,6 @@
 ##Backgrid-ResponsiveGrid
 
-<img src="//benschwarz.github.io/bower-badges/badge@2x.png" width="130" height="30">
+<img src="https://benschwarz.github.io/bower-badges/badge@2x.png" width="130" height="30">
 
 current vesion: v0.3.0
 
