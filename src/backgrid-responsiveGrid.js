@@ -7,18 +7,18 @@
  */
 (function (root, factory) {
 
-    if (typeof define === "function" && define.amd) {
-        // AMD (+ global for extensions)
-        define(["jquery", "underscore", "backbone", "backgrid"], function ($, _, Backbone, Backgrid) {
-            return (root.Backgrid.Extension.ResponsiveGrid = factory(_, Backbone));
-        });
-    } else if (typeof exports === "object") {
-        // CommonJS
-        module.exports = factory(require("jquery"), require("underscore"), require("backbone"), require("backgrid"));
-    } else {
-        // Browser
-        root.Backgrid.Extension.ResponsiveGrid = factory(root.$, root._, root.Backbone, root.Backgrid);
-    }}(this, function ($, _, Backbone, Backgrid) {
+  if (typeof define === "function" && define.amd) {
+    // AMD (+ global for extensions)
+    define(["jquery", "underscore", "backbone", "backgrid"], function ($, _, Backbone, Backgrid) {
+      return (root.Backgrid.Extension.ResponsiveGrid = factory(_, Backbone));
+    });
+  } else if (typeof exports === "object") {
+    // CommonJS
+    module.exports = factory(require("jquery"), require("underscore"), require("backbone"), require("backgrid"));
+  } else {
+    // Browser
+    root.Backgrid.Extension.ResponsiveGrid = factory(root.$, root._, root.Backbone, root.Backgrid);
+  }}(this, function ($, _, Backbone, Backgrid) {
 
   var ResponsiveGrid = Backgrid.Grid.extend({
 
@@ -64,7 +64,7 @@
     {
       //deep-lone the entire table - this will later turn into the pinned columns
       var  $originalTable = this.$el,
-      $tableCopy = $originalTable.clone(true);
+          $tableCopy = $originalTable.clone(true);
 
       //check if the table needs to be made into "small-screen-mode" AND if the grid is already present on the screen, if not then do nothing
       if( !this.isPinnable || !$originalTable.is(':visible'))
@@ -80,14 +80,14 @@
         $originalTable.wrap('<div class="grid-scrollable" />');
       }
 
-        //skip the columns that we want to pin, and hide all the others
-        var totalColumns = $tableCopy.find('th').length;
-        //we need to do "+1" because using ":nth-child" starts with a zero-based index
-        for(var i = this.columnsToPin + 1; i <= totalColumns; i++)
-        {
-            //$tableCopy.find('th:nth-child(' + i + '),td:nth-child(' + i + ')').hide();
-            $tableCopy.find('th:nth-child(' + i + '),td:nth-child(' + i + ')').hide();
-        }
+      //skip the columns that we want to pin, and hide all the others
+      var totalColumns = $tableCopy.find('th').length;
+      //we need to do "+1" because using ":nth-child" starts with a zero-based index
+      for(var i = this.columnsToPin + 1; i <= totalColumns; i++)
+      {
+        //$tableCopy.find('th:nth-child(' + i + '),td:nth-child(' + i + ')').hide();
+        $tableCopy.find('th:nth-child(' + i + '),td:nth-child(' + i + ')').hide();
+      }
 
 
       //remove all previous instances of pinned columns
@@ -114,7 +114,7 @@
     unpinColumns : function( )
     {
       var $originalTable = this.$el,
-      $gridWrapper = this.$el.parents('.grid-responsive-wrapper');
+          $gridWrapper = this.$el.parents('.grid-responsive-wrapper');
 
       $originalTable.unwrap();
       $gridWrapper.find('.grid-pinned').remove();
@@ -145,12 +145,12 @@
       {
         grid.isPinnable = true;
         grid.pinColumns( );
-       }else{
+      }else{
         grid.isPinnable = false;
         grid.unpinColumns( );
       }
 
     }
   });
-    return ResponsiveGrid;
+  return ResponsiveGrid;
 }));
