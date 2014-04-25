@@ -1,6 +1,6 @@
 ##Backgrid-ResponsiveGrid
 
-<img src="https://benschwarz.github.io/bower-badges/badge@2x.png" width="130" height="30">
+[![Code Climate](https://codeclimate.com/github/morficus/Backgrid-ResponsiveGrid.png)](https://codeclimate.com/github/morficus/Backgrid-ResponsiveGrid) 
 
 current vesion: v0.3.0
 
