@@ -1,0 +1,31 @@
+{
+  "name": "Backgrid-ResponsiveGrid",
+  "version": "0.2.0",
+  "homepage": "https://github.com/morficus/Backgrid-ResponsiveGrid",
+  "authors": [
+    "Maurice Williams <morficus@gmail.com>"
+  ],
+  "description": "Extension to provide a better small-screen experience when using Background.js",
+  "main": "dist/backgrid-responsiveGrid.min.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "backgrid",
+    "table",
+    "datagrid",
+    "grid",
+    "responsive"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backgrid": "~0.3.5"
+  }
+}
