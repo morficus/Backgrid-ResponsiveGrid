@@ -12,8 +12,8 @@ The extention was inspiered by [Zurb's Responsive Tables](http://zurb.com/playgr
 None
 
 ##Usage
-Step 0 - download responsiveBackgrid (either using Bower or by directlly downloading it)
-Step 1 - add responsiveBackgrid.js to your page (either using requireJS or with old-school script tags)
+Step 0 - download responsiveBackgrid (either using Bower or by directlly downloading it)  
+Step 1 - add responsiveBackgrid.js to your page (either using requireJS or with old-school script tags)  
 Step 2 - add responsiveBackgrid.css to your page  
 Step 3 - use the same way as you would Backgrid.Grid, but use Backgrind.Extenssion.ResponsiveGrid during the instantiation:  
 ```javascript
