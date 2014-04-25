@@ -1,4 +1,10 @@
-
+/**
+ * ResponsiveGrid is an enhancement to the base Backgrid.Grid class which improves its usability on small-screens
+ * such as phones or portrait-mode tablets.
+ *
+ * @class Backgrid.Extension.ResponsiveGrid
+ * @extends Backgrid.Grid
+ */
 (function (root, factory) {
 
     if (typeof define === "function" && define.amd) {
@@ -14,13 +20,6 @@
         root.Backgrid.Extension.ResponsiveGrid = factory(root.$, root._, root.Backbone, root.Backgrid);
     }}(this, function ($, _, Backbone, Backgrid) {
 
-  /**
-   * ResponsiveGrid is an enhancement to the base Backgrid.Grid class which improves its usability on small-screens
-   * such as phones or portrait-mode tablets.
-   *
-   * @class Backgrid.Extension.ResponsiveGrid
-   * @extends Backgrid.Grid
-   */
   var ResponsiveGrid = Backgrid.Grid.extend({
 
     /** @property {boolean} is the table in a state that calls for pinned columns? */
@@ -53,7 +52,7 @@
 
       $(window).on('resize', {'grid' : this}, this.setSwitchable);
 
-      this.setSwitchable();
+      this.setSwitchable({});
     },
 
     /**
@@ -129,13 +128,13 @@
     /**
      * Based on the screen size, sets the property to indicate if there is a need to pin the column(s) or not
      *
-     * @param  {Event} event The window resize event (optional)
+     * @param  {Object} event object The window resize event (optional)
      */
     setSwitchable : function( event )
     {
       var grid;
 
-      if( _.isUndefined(event))
+      if( _.isUndefined(event.data))
       {
         grid = this;
       }else{
