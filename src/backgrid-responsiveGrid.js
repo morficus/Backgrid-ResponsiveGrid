@@ -1,5 +1,18 @@
-(function ($, _, Backbone, Backgrid)
-{
+
+(function (root, factory) {
+
+    if (typeof define === "function" && define.amd) {
+        // AMD (+ global for extensions)
+        define(["jquery", "underscore", "backbone", "backgrid"], function ($, _, Backbone, Backgrid) {
+            return (root.Backgrid.Extension.ResponsiveGrid = factory(_, Backbone));
+        });
+    } else if (typeof exports === "object") {
+        // CommonJS
+        module.exports = factory(require("jquery"), require("underscore"), require("backbone"), require("backgrid"));
+    } else {
+        // Browser
+        root.Backgrid.Extension.ResponsiveGrid = factory(root.$, root._, root.Backbone, root.Backgrid);
+    }}(this, function ($, _, Backbone, Backgrid) {
 
   /**
    * ResponsiveGrid is an enhancement to the base Backgrid.Grid class which improves its usability on small-screens
@@ -8,7 +21,7 @@
    * @class Backgrid.Extension.ResponsiveGrid
    * @extends Backgrid.Grid
    */
-  Backgrid.Extension.ResponsiveGrid = Backgrid.Grid.extend({
+  var ResponsiveGrid = Backgrid.Grid.extend({
 
     /** @property {boolean} is the table in a state that calls for pinned columns? */
     isPinnable : false,
@@ -82,7 +95,7 @@
       this.$el.parents('.grid-responsive-wrapper').find('.grid-pinned').remove();
 
       //append the cloned table to the wrapper
-      $('.grid-responsive-wrapper').append($tableCopy);
+      this.$el.parents('.grid-responsive-wrapper').append($tableCopy);
 
       //wrap the clone in a div to make it behave as pinned columns
       $tableCopy.wrap('<div class="grid-pinned" />');
@@ -140,4 +153,5 @@
 
     }
   });
-}(jQuery, _, Backbone, Backgrid));
+    return ResponsiveGrid;
+}));
