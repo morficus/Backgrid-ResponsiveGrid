@@ -10,7 +10,7 @@
   if (typeof define === "function" && define.amd) {
     // AMD (+ global for extensions)
     define(["jquery", "underscore", "backbone", "backgrid"], function ($, _, Backbone, Backgrid) {
-      return (root.Backgrid.Extension.ResponsiveGrid = factory(_, Backbone));
+      return (root.Backgrid.Extension.ResponsiveGrid = factory($, _, Backbone, Backgrid));
     });
   } else if (typeof exports === "object") {
     // CommonJS
