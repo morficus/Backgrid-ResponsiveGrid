@@ -15,7 +15,7 @@ None
 Step 0 - download responsiveBackgrid (either using Bower or by directlly downloading it)  
 Step 1 - add responsiveBackgrid.js to your page (either using requireJS or with old-school script tags)  
 Step 2 - add responsiveBackgrid.css to your page  
-Step 3 - use the same way as you would Backgrid.Grid, but use Backgrind.Extension.ResponsiveGrid during the instantiation:  
+Step 3 - use the same way as you would Backgrid.Grid, but use Backgrid.Extension.ResponsiveGrid during the instantiation:  
 ```javascript
 var myFlexGrid = new Backgrid.Extension.ResponsiveGrid({
      columns: columns,
