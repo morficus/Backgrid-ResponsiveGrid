@@ -4,8 +4,8 @@
 
 current vesion: v0.3.0
 
-An extension for [Backgrid.js](http://backgridjs.com/) to provide a better small-screen-friendly expereince.  
-The extention was inspiered by [Zurb's Responsive Tables](http://zurb.com/playground/responsive-tables).
+An extension for [Backgrid.js](http://backgridjs.com/) to provide a better small-screen-friendly experience.  
+The extention was inspired by [Zurb's Responsive Tables](http://zurb.com/playground/responsive-tables).
 
 
 ##Additional Dependencies
@@ -15,7 +15,7 @@ None
 Step 0 - download responsiveBackgrid (either using Bower or by directlly downloading it)  
 Step 1 - add responsiveBackgrid.js to your page (either using requireJS or with old-school script tags)  
 Step 2 - add responsiveBackgrid.css to your page  
-Step 3 - use the same way as you would Backgrid.Grid, but use Backgrind.Extenssion.ResponsiveGrid during the instantiation:  
+Step 3 - use the same way as you would Backgrid.Grid, but use Backgrind.Extension.ResponsiveGrid during the instantiation:  
 ```javascript
 var myFlexGrid = new Backgrid.Extension.ResponsiveGrid({
      columns: columns,
