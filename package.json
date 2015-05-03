@@ -2,7 +2,7 @@
   "name": "Backgrid-ResponsiveGrid",
   "version": "0.3.0",
   "description": "<img src=\"//benschwarz.github.io/bower-badges/badge@2x.png\" width=\"130\" height=\"30\">",
-  "main": "index.js",
+  "main": "./src/backgrid-responsiveGrid.js",
   "directories": {
     "example": "example"
   },
