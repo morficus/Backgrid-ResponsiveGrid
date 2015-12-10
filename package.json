@@ -1,6 +1,6 @@
 {
-  "name": "Backgrid-ResponsiveGrid",
-  "version": "0.4.0",
+  "name": "backgrid-responsivegrid",
+  "version": "0.4.1",
   "description": "<img src=\"//benschwarz.github.io/bower-badges/badge@2x.png\" width=\"130\" height=\"30\">",
   "main": "./src/backgrid-responsiveGrid.js",
   "directories": {
