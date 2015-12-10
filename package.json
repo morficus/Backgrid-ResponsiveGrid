@@ -1,6 +1,6 @@
 {
   "name": "Backgrid-ResponsiveGrid",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "<img src=\"//benschwarz.github.io/bower-badges/badge@2x.png\" width=\"130\" height=\"30\">",
   "main": "./src/backgrid-responsiveGrid.js",
   "directories": {
@@ -20,9 +20,9 @@
   },
   "homepage": "https://github.com/morficus/Backgrid-ResponsiveGrid",
   "devDependencies": {
-    "grunt": "~0.4.4",
-    "grunt-contrib-uglify": "~0.4.0",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-recess": "~0.6.1"
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.7.0",
+    "grunt-contrib-uglify": "^0.11.0",
+    "grunt-recess": "^1.0.1"
   }
 }
